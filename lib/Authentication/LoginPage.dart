@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool _secureText = true;
   final formKey = new GlobalKey<FormState>();
 
   String email, password;
@@ -98,8 +99,18 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.grey.withOpacity(0.5)),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: greenColor),
+                  ),
+                  suffixIcon: IconButton(
+                    splashRadius: 20,
+                    icon: Icon(
+                        _secureText ? Icons.visibility_off : Icons.visibility),
+                    onPressed: () {
+                      setState(() {
+                        _secureText = !_secureText;
+                      });
+                    },
                   )),
-              obscureText: true,
+              obscureText: _secureText,
               onChanged: (value) {
                 this.password = value;
               },

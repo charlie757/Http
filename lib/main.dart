@@ -5,7 +5,11 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:test_app/Authentication/authService.dart';
 import 'package:test_app/Drawerpage/Widget/Navigation_drawer_widget.dart';
+import 'package:test_app/LoadData/Network.dart';
+import 'package:test_app/Pages/Home.dart';
+import 'package:test_app/Pages/loaddata.dart';
 import 'package:test_app/Pages/search.dart';
+import 'package:test_app/restApi/listview.dart';
 
 import 'Drawerpage/Provider/NavigatorProvider.dart';
 import 'Pages/Profile.dart';
@@ -49,7 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AuthService().handleAuth(),
+      body:
+          // UserNetworkPage()
+          // list_example()
+          // Home2()
+          AuthService().handleAuth(),
     );
   }
 }

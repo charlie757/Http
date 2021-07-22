@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/Authentication/authService.dart';
 import 'package:test_app/Drawerpage/Widget/Navigation_drawer_widget.dart';
 
 import 'BottamNavigationBarWidget/TabBarItem.dart';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage>
   int index = 0;
 
   final pages = <Widget>[
-    Home(),
+    Home2(),
     Search(),
     Profile(),
     Setting(),
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        // drawer: NavigationDrawerWidget(),
+        drawer: NavigationDrawerWidget(),
         extendBody: true,
         body: pages[index],
         bottomNavigationBar: TabBarMaterialWidget(
@@ -35,9 +36,8 @@ class _HomePageState extends State<HomePage>
           onChangedTab: onChangedTab,
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () => print('Hello World'),
-        ),
+            child: Icon(Icons.logout),
+            onPressed: () => AuthService().signOut()),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       );
 

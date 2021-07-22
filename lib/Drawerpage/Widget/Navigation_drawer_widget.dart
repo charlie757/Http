@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_app/Authentication/authService.dart';
 import 'package:test_app/Drawerpage/Modal/drawer_item.dart';
+import 'package:test_app/Drawerpage/Page/ProfilePage1.dart';
+import 'package:test_app/Drawerpage/Page/Sample.dart';
+import 'package:test_app/Drawerpage/Page/performace.dart';
 import 'package:test_app/Drawerpage/Provider/NavigatorProvider.dart';
 import 'package:test_app/Drawerpage/data/drawer_item.dart';
+import 'package:test_app/Pages/Setting.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -78,12 +82,6 @@ class NavigationDrawerWidget extends StatelessWidget {
         ));
 
     Navigator.of(context).pop();
-
-    switch (index) {
-      case 5:
-        navigateTo(AuthService().signOut());
-        break;
-    }
   }
 
   Widget buildMenuItem({

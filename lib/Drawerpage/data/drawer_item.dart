@@ -8,7 +8,4 @@ final itemsFirst = [
   DrawerItem(title: 'Performance & Optimization', icon: Icons.build),
 ];
 
-final itemsSecond = [
-  DrawerItem(title: 'Login', icon: Icons.login),
-  DrawerItem(title: 'LogOut', icon: Icons.logout)
-];
+final itemsSecond = [DrawerItem(title: 'LogOut', icon: Icons.logout)];
