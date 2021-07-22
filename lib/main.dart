@@ -4,15 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:test_app/Authentication/authService.dart';
-import 'package:test_app/Drawerpage/Widget/Navigation_drawer_widget.dart';
-import 'package:test_app/LoadData/Network.dart';
-import 'package:test_app/Pages/Home.dart';
-import 'package:test_app/Pages/loaddata.dart';
-import 'package:test_app/Pages/search.dart';
-import 'package:test_app/restApi/listview.dart';
 
 import 'Drawerpage/Provider/NavigatorProvider.dart';
-import 'Pages/Profile.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

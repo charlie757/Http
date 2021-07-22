@@ -12,15 +12,6 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  var url = 'https://jsonplaceholder.typicode.com/users';
-
-  Future<List> getData() async {
-    var res =
-        await http.get(Uri.https('jsonplaceholder.typicode.com', 'users'));
-    var jsonData = jsonDecode(res.body);
-    List<User> users = [];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,26 +24,3 @@ class _ProfileState extends State<Profile> {
     );
   }
 }
-//  body: FutureBuilder(
-//           builder: (context, snapshot) {
-//             if (snapshot.hasData) {
-//               return CircularProgressIndicator();
-//             } else if (snapshot.hasError) {
-//               return Center(
-//                 child: Text("Error"),
-//               );
-//             } else if (snapshot.hasData) {
-//               print(snapshot.data);
-//               return Center(
-//                 child: Text("Data"),
-//               );
-//             }
-//           },
-//           future: getData(),
-//         )
-// class User {
-//   String username;
-//   String name;
-//   User({this.username, this.name});
-// }
-// //

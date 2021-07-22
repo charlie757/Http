@@ -20,26 +20,36 @@ class _SearchState extends State<Search> {
           backgroundColor: Colors.cyan,
           title: Text("Search"),
         ),
-        body: GridView.builder(
-            itemCount: modal1.length,
-            gridDelegate:
-                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-            itemBuilder: (context, index) {
-              Modal modal = modal1[index];
-              return Card(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset(
-                      modal.img,
-                      fit: BoxFit.cover,
-                      height: 100,
-                      width: 100,
-                    ),
-                    Text(modal.name),
-                  ],
-                ),
-              );
-            }));
+        body: GridView(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          children: [
+            card('assets/images/OIP (22).jpg', 'Banana'),
+            card('assets/images/OIP (17).jpg', 'Orange'),
+            card('assets/images/OIP (20).jpg', 'Ananas'),
+            card('assets/images/OIP (16).jpg', 'Strawberry'),
+            card('assets/images/OIP (22).jpg', 'Banana'),
+            card('assets/images/OIP (17).jpg', 'Orange'),
+            card('assets/images/OIP (20).jpg', 'Ananas'),
+            card('assets/images/OIP (16).jpg', 'Strawberry')
+          ],
+        ));
+  }
+
+  Card card(String img, String name) {
+    return Card(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(
+            img,
+            fit: BoxFit.cover,
+            height: 100,
+            width: 100,
+          ),
+          Text(name),
+        ],
+      ),
+    );
   }
 }
